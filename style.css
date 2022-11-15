@@ -1,5 +1,5 @@
 :root {
-  --background-grey: #e5e5e5;
+  --background-grey: #f2f4fc;
   --primary-blue: #072ac8;
   --font-light-grey: #6b708d;
   --font-black: #292e47;
@@ -8,7 +8,6 @@
 
 * {
   font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
 }
 
 body {
@@ -44,13 +43,29 @@ nav ul {
 
 nav li {
   padding: 1em;
+  color: var(--font-light-grey);
+  font-weight: 500;
+}
+
+nav li:hover {
+  color: var(--primary-blue);
 }
 
 @media (min-width: 992px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
   header {
     grid-template-columns: 20% 60% 20%;
   }
   nav {
     display: block;
+  }
+
+  .page-container {
+    min-width: 992px;
+    max-width: 1100px;
+    padding-top: 4em;
   }
 }
