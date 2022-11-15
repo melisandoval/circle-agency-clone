@@ -1,0 +1,56 @@
+:root {
+  --background-grey: #e5e5e5;
+  --primary-blue: #072ac8;
+  --font-light-grey: #6b708d;
+  --font-black: #292e47;
+  --font-white: #ffffff;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-grey);
+}
+
+button {
+  background-color: var(--primary-blue);
+  color: var(--font-white);
+  border: none;
+  padding: 1em 2em;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-items: center;
+}
+
+nav {
+  display: none;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav li {
+  padding: 1em;
+}
+
+@media (min-width: 992px) {
+  header {
+    grid-template-columns: 20% 60% 20%;
+  }
+  nav {
+    display: block;
+  }
+}
