@@ -26,11 +26,11 @@ header {
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: center;
-  justify-items: center;
 }
 
 header img {
-  padding: 1em;
+  padding: 1em 2em;
+  justify-self: start;
 }
 
 nav {
@@ -60,6 +60,11 @@ header button {
   display: none;
 }
 
+.burger-menu-container {
+  justify-self: end;
+  padding: 1em 2em;
+}
+
 @media (min-width: 992px) {
   body {
     display: flex;
@@ -74,10 +79,15 @@ header button {
 
   header {
     grid-template-columns: 20% 60% 20%;
+    justify-items: center;
   }
 
   nav {
     display: block;
+  }
+
+  .material-symbols-outlined {
+    display: none !important;
   }
 
   header button {
