@@ -29,6 +29,10 @@ header {
   justify-items: center;
 }
 
+header img {
+  padding: 1em;
+}
+
 nav {
   display: none;
 }
@@ -41,14 +45,19 @@ nav ul {
   justify-content: center;
 }
 
-nav li {
-  padding: 1em;
+nav a {
+  text-decoration: none;
   color: var(--font-light-grey);
   font-weight: 500;
+  padding: 1em;
 }
 
-nav li:hover {
+nav a:hover {
   color: var(--primary-blue);
+}
+
+header button {
+  display: none;
 }
 
 @media (min-width: 992px) {
@@ -56,16 +65,22 @@ nav li:hover {
     display: flex;
     justify-content: center;
   }
-  header {
-    grid-template-columns: 20% 60% 20%;
-  }
-  nav {
-    display: block;
-  }
 
   .page-container {
     min-width: 992px;
     max-width: 1100px;
     padding-top: 4em;
+  }
+
+  header {
+    grid-template-columns: 20% 60% 20%;
+  }
+
+  nav {
+    display: block;
+  }
+
+  header button {
+    display: inline-block;
   }
 }
