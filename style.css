@@ -1,3 +1,5 @@
+/* general styles */
+
 :root {
   --background-grey: #f2f4fc;
   --primary-blue: #072ac8;
@@ -20,7 +22,24 @@ button {
   color: var(--font-white);
   border: none;
   padding: 1em 2em;
+  cursor: pointer;
 }
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--font-black);
+}
+
+.grey-p {
+  color: var(--font-light-grey);
+}
+
+/* header and navbar */
 
 header {
   display: grid;
@@ -45,14 +64,13 @@ nav ul {
   justify-content: center;
 }
 
-nav a {
-  text-decoration: none;
+.grey-link {
   color: var(--font-light-grey);
   font-weight: 500;
   padding: 1em;
 }
 
-nav a:hover {
+.grey-link:hover {
   color: var(--primary-blue);
 }
 
@@ -63,6 +81,41 @@ header button {
 .burger-menu-container {
   justify-self: end;
   padding: 1em 2em;
+}
+
+/* hero section */
+
+.hero-section {
+  max-width: 100%;
+  padding: 2em 1em;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.hero-section p {
+  line-height: 150%;
+}
+
+.hero-buttons-container {
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-section .img-container {
+  max-width: 100%;
+  padding: 1em;
+}
+
+.hero-section img {
+  width: 100%;
 }
 
 @media (min-width: 992px) {
