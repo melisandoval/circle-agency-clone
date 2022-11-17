@@ -4,7 +4,7 @@
   --background-grey: #f2f4fc;
   --primary-blue: #072ac8;
   --font-light-grey: #6b708d;
-  --font-black: #292e47;
+  --dark-blue: #292e47;
   --white: #ffffff;
 }
 
@@ -33,7 +33,7 @@ a {
 h1,
 h2,
 h3 {
-  color: var(--font-black);
+  color: var(--dark-blue);
 }
 
 h1 {
