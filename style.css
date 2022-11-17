@@ -6,6 +6,7 @@
   --font-light-grey: #6b708d;
   --dark-blue: #292e47;
   --white: #ffffff;
+  --yellow: #ffc600;
 }
 
 * {
@@ -188,6 +189,29 @@ header button {
   font-size: 1.4rem;
 }
 
+/* testimonial section */
+
+.testimonial-section {
+  margin: 1em;
+  padding: 1em;
+  max-width: 100%;
+  background-image: url("./assets/testimonial-orbit-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: var(--dark-blue);
+  text-align: center;
+}
+
+.testimonial-section h2 {
+  color: var(--white);
+}
+
+.testimonial-p {
+  color: var(--yellow);
+  font-weight: 500;
+  padding: 1.5em;
+}
+
 @media (min-width: 768px) {
   /* hero section */
 
@@ -219,7 +243,6 @@ header button {
 
   .hero-buttons-container {
     flex-direction: row;
-    /* padding: 2em; */
   }
 
   /* projects section */
@@ -228,6 +251,18 @@ header button {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
+
+  /* testimonial section */
+
+  .testimonial-section h2 {
+    font-size: 2.5rem;
+    padding-top: 2em;
+  }
+
+  .testimonial-p {
+    font-size: 1.5rem;
+    padding: 2em 5em;
   }
 }
 
