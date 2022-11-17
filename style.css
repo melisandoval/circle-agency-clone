@@ -208,6 +208,9 @@ header button {
 
 .testimonial-section h2 {
   color: var(--white);
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding-top: 1.5em;
 }
 
 .testimonial-p {
@@ -293,12 +296,16 @@ header button {
 
   .testimonial-section h2 {
     font-size: 2.5rem;
-    padding-top: 2em;
+    padding-top: 80px;
   }
 
   .testimonial-p {
     font-size: 1.5rem;
     padding: 2em 5em;
+  }
+
+  .testimonial-client-card {
+    padding-bottom: 80px;
   }
 }
 
