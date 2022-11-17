@@ -210,7 +210,7 @@ header button {
   color: var(--white);
   margin-block-start: 0em;
   margin-block-end: 0em;
-  padding-top: 1.5em;
+  padding: 1.5em 0.5em 0;
 }
 
 .testimonial-p {
