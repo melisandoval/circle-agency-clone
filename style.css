@@ -5,12 +5,12 @@
   --primary-blue: #072ac8;
   --font-light-grey: #6b708d;
   --font-black: #292e47;
-  --font-white: #ffffff;
+  --white: #ffffff;
 }
 
 * {
   font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.04rem;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 
 button {
   background-color: var(--primary-blue);
-  color: var(--font-white);
+  color: var(--white);
   border: none;
   padding: 1em 2em;
   cursor: pointer;
@@ -36,8 +36,30 @@ h3 {
   color: var(--font-black);
 }
 
+h1 {
+  font-size: 2.1rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 .grey-p {
   color: var(--font-light-grey);
+}
+
+.grey-link {
+  color: var(--font-light-grey);
+  font-weight: 500;
+  padding: 1em;
+}
+
+.grey-link:hover {
+  color: var(--primary-blue);
+}
+
+.blue-link {
+  color: var(--primary-blue);
 }
 
 /* header and navbar */
@@ -65,16 +87,6 @@ nav ul {
   justify-content: center;
 }
 
-.grey-link {
-  color: var(--font-light-grey);
-  font-weight: 500;
-  padding: 1em;
-}
-
-.grey-link:hover {
-  color: var(--primary-blue);
-}
-
 header button {
   display: none;
 }
@@ -93,10 +105,6 @@ header button {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-h1 {
-  font-size: 2rem;
 }
 
 .hero-section p {
@@ -143,6 +151,43 @@ h1 {
   filter: grayscale(1);
 }
 
+/* Recent projects section */
+
+.recent-projects-section {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-card {
+  max-width: 340px;
+  margin: 1em 0.4em;
+  background-color: var(--white);
+}
+
+.project-card img {
+  max-width: 100%;
+}
+
+.project-card-text-container {
+  max-width: 100%;
+}
+
+.project-card-text-container {
+  padding: 1.6em;
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+}
+
 @media (min-width: 768px) {
   /* hero section */
 
@@ -175,6 +220,14 @@ h1 {
   .hero-buttons-container {
     flex-direction: row;
     /* padding: 2em; */
+  }
+
+  /* projects section */
+
+  .projects-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
 
