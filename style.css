@@ -265,6 +265,7 @@ header button {
 
 .services-section h3 {
   font-size: 24px;
+  font-weight: 500;
 }
 
 .services-cards-container {
@@ -373,6 +374,7 @@ header button {
 
   .services-cards-container {
     flex-direction: row;
+    align-items: stretch;
   }
 }
 
