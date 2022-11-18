@@ -8,6 +8,7 @@
   --white: #ffffff;
   --yellow: #ffc600;
   --light-blue: #a2d6f9;
+  --lightest-blue: #ecf7ff;
 }
 
 * {
@@ -255,8 +256,47 @@ header button {
   display: none;
 }
 
+/* Services section */
+
+.services-section {
+  padding: 1em;
+}
+
+.services-section h3 {
+  font-size: 24px;
+}
+
+.services-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card {
+  background-color: var(--white);
+  max-width: 100%;
+  padding: 2em;
+  max-width: 340px;
+}
+
+.service-card-img-container {
+  background-color: var(--lightest-blue);
+  padding: 1em;
+  border-radius: 50%;
+  max-width: max-content;
+}
+
+.service-card img {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.services-link-container {
+  padding-top: 1em;
+}
+
 @media (min-width: 768px) {
-  /* hero section */
+  /* hero section min-width: 768px*/
 
   .hero-small-images-container {
     width: 100%;
@@ -288,14 +328,14 @@ header button {
     flex-direction: row;
   }
 
-  /* clients logos section */
+  /* clients logos section min-width: 768px */
 
   .clients-logos-section {
     padding-top: 6em;
     padding-bottom: 6em;
   }
 
-  /* projects section */
+  /* projects section min-width: 768px */
 
   .recent-projects-section {
     margin-bottom: 6em;
@@ -307,7 +347,7 @@ header button {
     justify-content: space-evenly;
   }
 
-  /* testimonial section */
+  /* testimonial section min-width: 768px */
 
   .testimonial-section {
     margin-bottom: 6em;
@@ -326,9 +366,17 @@ header button {
   .testimonial-client-card {
     padding-bottom: 100px;
   }
+
+  /* services section min-width: 768px */
+
+  .service-card-container {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+  /* hero section */
   .hero-text-content-container {
     display: flex;
     flex-direction: column;
