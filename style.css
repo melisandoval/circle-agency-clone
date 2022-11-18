@@ -195,7 +195,7 @@ header button {
 /* testimonial section */
 
 .testimonial-section {
-  margin: 2em 1em;
+  margin: 2em 0;
   max-width: 100%;
   background-image: url("./assets/testimonial-orbit-bg.png");
   background-repeat: no-repeat;
