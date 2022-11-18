@@ -155,7 +155,7 @@ header button {
   filter: grayscale(1);
 }
 
-/* Recent projects section */
+/* Recent projects section mobile */
 
 .recent-projects-section {
   padding: 1em;
@@ -393,20 +393,22 @@ header button {
 }
 
 @media (min-width: 992px) {
-  /* general styles */
+  /* general styles min-width: 992px */
 
   body {
+    width: 100%;
     display: flex;
     justify-content: center;
   }
 
   .page-container {
     min-width: 992px;
-    max-width: 1100px;
+    max-width: 1320px;
+    /* max-width: 1100px; */
     padding-top: 4em;
   }
 
-  /* header and navbar */
+  /* header and navbar min-width: 992px */
 
   header {
     grid-template-columns: 30% 40% 30%;
@@ -424,13 +426,14 @@ header button {
     display: inline-block;
   }
 
-  /* hero section */
+  /* hero section min-width: 992px */
 
   .hero-section {
+    /* max-width: 1100px; */
     display: grid;
     grid-template-columns: 45% 55%;
     text-align: left;
-    margin-top: 6em;
+    margin: 6em 4em 2em;
   }
 
   .hero-text-content-container {
@@ -441,7 +444,13 @@ header button {
     justify-self: end;
   }
 
-  /* testimonial section */
+  /* recent projects section min-width: 992px */
+
+  .recent-projects-section {
+    margin: 1em 4em 8em;
+  }
+
+  /* testimonial section min-width: 992px */
 
   .testimonial-emojis-container {
     position: absolute;
@@ -476,5 +485,11 @@ header button {
   #emoji-4 {
     grid-column: 3;
     grid-row: 3;
+  }
+
+  /* services section min-width: 992px */
+
+  .services-section {
+    margin: 0 4em;
   }
 }
