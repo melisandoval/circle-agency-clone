@@ -193,7 +193,7 @@ header button {
 /* testimonial section */
 
 .testimonial-section {
-  margin: 1em;
+  margin: 2em 1em;
   max-width: 100%;
   background-image: url("./assets/testimonial-orbit-bg.png");
   background-repeat: no-repeat;
@@ -288,7 +288,18 @@ header button {
     flex-direction: row;
   }
 
+  /* clients logos section */
+
+  .clients-logos-section {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
   /* projects section */
+
+  .recent-projects-section {
+    margin-bottom: 6em;
+  }
 
   .projects-container {
     flex-direction: row;
@@ -297,6 +308,10 @@ header button {
   }
 
   /* testimonial section */
+
+  .testimonial-section {
+    margin-bottom: 6em;
+  }
 
   .testimonial-section h2 {
     font-size: 2.5rem;
@@ -364,6 +379,7 @@ header button {
     display: grid;
     grid-template-columns: 45% 55%;
     text-align: left;
+    margin-top: 6em;
   }
 
   .hero-text-content-container {
