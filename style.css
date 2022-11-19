@@ -426,6 +426,16 @@ header button {
     flex-direction: row;
     align-items: stretch;
   }
+
+  /* CTA section */
+
+  .CTA-section {
+    margin: 8em 0;
+  }
+
+  .CTA-section-content-container {
+    padding: 8em 2em;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
