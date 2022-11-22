@@ -62,19 +62,23 @@ window.addEventListener("load", () => {
               </div>`;
   };
 
-  db.collection("projects")
-    .where("projectNumber", "<=", 3)
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-        const project = doc.data();
-        projectsContainer.innerHTML += projectCardTemplate(
-          project.img,
-          project.title,
-          project.paragraph,
-          project.projectNumber
-        );
+  try {
+    db.collection("projects")
+      .where("projectNumber", "<=", 3)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id, " => ", doc.data());
+          const project = doc.data();
+          projectsContainer.innerHTML += projectCardTemplate(
+            project.img,
+            project.title,
+            project.paragraph,
+            project.projectNumber
+          );
+        });
       });
-    });
+  } catch (error) {
+    console.log(error);
+  }
 });
