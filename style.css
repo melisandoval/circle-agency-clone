@@ -173,7 +173,7 @@ header button {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 }
 
 #loading-gif {
@@ -450,6 +450,7 @@ footer a:hover {
   .projects-container {
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: stretch;
     justify-content: space-evenly;
   }
 
