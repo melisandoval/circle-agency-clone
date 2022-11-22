@@ -176,6 +176,11 @@ header button {
   align-items: stretch;
 }
 
+#loading-gif {
+  max-width: 3rem;
+  align-self: center;
+}
+
 .project-card {
   max-width: 340px;
   margin: 1em 0.4em;

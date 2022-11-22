@@ -45,6 +45,7 @@ window.addEventListener("load", () => {
 
 window.addEventListener("load", () => {
   const projectsContainer = document.querySelector(".projects-container");
+  const loadingGif = document.getElementById("loading-gif");
 
   // Function that return Project card HTML template:
   const projectCardTemplate = (img, title, paragraph, id) => {
@@ -68,8 +69,8 @@ window.addEventListener("load", () => {
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          console.log(doc.id, " => ", doc.data());
           const project = doc.data();
+          loadingGif.remove();
           projectsContainer.innerHTML += projectCardTemplate(
             project.img,
             project.title,
