@@ -173,7 +173,7 @@ header button {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 .project-card {
@@ -185,6 +185,7 @@ header button {
 
 .project-card img {
   max-width: 100%;
+  aspect-ratio: 4/3;
 }
 
 .project-card-text-container {

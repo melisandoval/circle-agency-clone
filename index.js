@@ -7,9 +7,9 @@ const firebaseConfig = {
   appId: "1:489067067254:web:4ba93837c9fe5ff3c82c57",
 };
 
-//Initialize firestore
 const db = firebase.initializeApp(firebaseConfig).firestore();
 
+// function sendEmailtoDb that handles suscribe button in homepage:
 function sendEmailtoDb(e) {
   e.preventDefault();
   const email = document.getElementById("email").value;
@@ -40,6 +40,41 @@ function sendEmailtoDb(e) {
 
 window.addEventListener("load", () => {
   const suscribeBtn = document.getElementById("suscribe");
-
   suscribeBtn.addEventListener("click", sendEmailtoDb);
+});
+
+window.addEventListener("load", () => {
+  const projectsContainer = document.querySelector(".projects-container");
+
+  // Function that return Project card HTML template:
+  const projectCardTemplate = (img, title, paragraph, id) => {
+    return `<div class="project-card">
+              <img
+                src=${img}
+                alt="Project image"
+              />
+              <div class="project-card-text-container">
+                <h3>${title}</h3>
+                <p class="grey-p">
+                  ${paragraph}
+                </p>
+                <a href="#/${id}" class="blue-link">Learn more</a>
+              </div>`;
+  };
+
+  db.collection("projects")
+    .where("projectNumber", "<=", 3)
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+        const project = doc.data();
+        projectsContainer.innerHTML += projectCardTemplate(
+          project.img,
+          project.title,
+          project.paragraph,
+          project.projectNumber
+        );
+      });
+    });
 });
