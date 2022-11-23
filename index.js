@@ -69,7 +69,8 @@ window.addEventListener("load", () => {
 
   try {
     db.collection("projects")
-      .where("projectNumber", "<=", 3)
+      .where("category", "==", "featured")
+      .limit(3)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -95,7 +96,8 @@ window.addEventListener("load", () => {
 
   try {
     db.collection("projects")
-      .where("projectNumber", ">", 3)
+      .where("category", "==", "")
+      .limit(3)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
