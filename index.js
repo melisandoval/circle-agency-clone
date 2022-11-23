@@ -38,6 +38,24 @@ function sendEmailtoDb(e) {
   } else invalidEmailMessage.removeAttribute("hidden");
 }
 
+// Function that return Project card HTML template:
+const projectCardTemplate = (img, title, subtitle, id) => {
+  return `<div class="project-card">
+              <img
+                src=${img}
+                alt="Project image"
+              />
+              <div class="project-card-text-container">
+                <h3>${title}</h3>
+                <p class="grey-p">
+                  ${subtitle}
+                </p>
+                <a href="#/${id}" class="blue-link">Learn more</a>
+              </div>`;
+};
+
+// TO-DO: revisar el <a> del template!!!!
+
 // suscribe button:
 window.addEventListener("load", () => {
   const suscribeBtn = document.getElementById("suscribe");
@@ -48,24 +66,6 @@ window.addEventListener("load", () => {
 window.addEventListener("load", () => {
   const projectsContainer = document.getElementById("recent-projects");
   const loadingGif = document.getElementById("loading-gif");
-
-  // Function that return Project card HTML template:
-  const projectCardTemplate = (img, title, paragraph, id) => {
-    return `<div class="project-card">
-              <img
-                src=${img}
-                alt="Project image"
-              />
-              <div class="project-card-text-container">
-                <h3>${title}</h3>
-                <p class="grey-p">
-                  ${paragraph}
-                </p>
-                <a href="#/${id}" class="blue-link">Learn more</a>
-              </div>`;
-  };
-
-  // TO-DO: revisar el <a> del template!!!!
 
   try {
     db.collection("projects")
@@ -78,7 +78,7 @@ window.addEventListener("load", () => {
           projectsContainer.innerHTML += projectCardTemplate(
             project.img,
             project.title,
-            project.paragraph,
+            project.subtitle,
             project.projectNumber
           );
         });
@@ -93,24 +93,6 @@ window.addEventListener("load", () => {
   const projectsContainer = document.getElementById("other-projects");
   const loadingGif = document.getElementById("loading-gif");
 
-  // Function that return Project card HTML template:
-  const projectCardTemplate = (img, title, paragraph, id) => {
-    return `<div class="project-card">
-              <img
-                src=${img}
-                alt="Project image"
-              />
-              <div class="project-card-text-container">
-                <h3>${title}</h3>
-                <p class="grey-p">
-                  ${paragraph}
-                </p>
-                <a href="#/${id}" class="blue-link">Learn more</a>
-              </div>`;
-  };
-
-  // TO-DO: revisar el <a> del template!!!!
-
   try {
     db.collection("projects")
       .where("projectNumber", ">", 3)
@@ -122,7 +104,7 @@ window.addEventListener("load", () => {
           projectsContainer.innerHTML += projectCardTemplate(
             project.img,
             project.title,
-            project.paragraph,
+            project.subtitle,
             project.projectNumber
           );
         });
