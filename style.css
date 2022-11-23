@@ -402,10 +402,24 @@ footer a:hover {
   color: var(--dark-blue);
 }
 
-/* Project Page mobile */
+/* Project page mobile */
 
 .project-section {
   padding: 2em;
+}
+
+.project-subtitle {
+  color: var(--font-light-grey);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.project-completed-on {
+  font-weight: 100;
+}
+
+.project-date {
+  color: var(--font-light-grey);
 }
 
 .project-section img {
@@ -535,6 +549,14 @@ footer a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-content: space-between;
+  }
+
+  /* Project page min-width: 768px */
+
+  .project-section img {
+    width: 100%;
+    height: 444px;
+    object-fit: cover;
   }
 }
 
@@ -670,5 +692,12 @@ footer a:hover {
   .CTA-section button {
     margin-left: 1em;
     margin-top: 0;
+  }
+
+  /* Project page min-width: 992px */
+
+  .project-subtitle-and-date-container {
+    display: flex;
+    justify-content: space-between;
   }
 }
