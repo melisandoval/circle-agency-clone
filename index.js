@@ -40,18 +40,20 @@ function sendEmailtoDb(e) {
 
 // Function that return Project card HTML template:
 const projectCardTemplate = (img, title, subtitle, id) => {
-  return `<div class="project-card">
-              <img
-                src=${img}
-                alt="Project image"
-              />
-              <div class="project-card-text-container">
-                <h3>${title}</h3>
-                <p class="grey-p">
-                  ${subtitle}
-                </p>
-                <a href="#/${id}" class="blue-link">Learn more</a>
-              </div>`;
+  return `
+  <a href="project.html?id=${id}">
+    <div class="project-card">
+      <img
+          src=${img}
+          alt="Project image"
+      />
+      <div class="project-card-text-container">
+          <h3>${title}</h3>
+          <p class="grey-p">${subtitle}</p>
+          <a href="project.html?id=${id}" class="blue-link">Learn more</a>
+      </div>
+    </div>
+  </a>`;
 };
 
 // TO-DO: revisar el <a> del template!!!!
