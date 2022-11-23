@@ -422,9 +422,26 @@ footer a:hover {
   color: var(--font-light-grey);
 }
 
-.project-section img {
-  max-width: 100%;
+.project-and-shadow-wrap {
+  position: relative;
+  width: 100%;
   padding: 2em 0;
+}
+
+#project-img {
+  width: 100%;
+  position: relative;
+}
+
+#shadow-project-img {
+  left: 0;
+  top: 10%;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+  filter: blur(2rem);
+  transform: scale(0.9, 0.78);
 }
 
 /* media for tablets */
@@ -557,6 +574,10 @@ footer a:hover {
     width: 100%;
     height: 444px;
     object-fit: cover;
+  }
+
+  #shadow-project-img {
+    transform: scale(0.98);
   }
 }
 
