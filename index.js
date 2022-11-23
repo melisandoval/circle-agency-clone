@@ -63,6 +63,8 @@ window.addEventListener("load", () => {
               </div>`;
   };
 
+  // TO-DO: revisar el <a> del template!!!!
+
   try {
     db.collection("projects")
       .where("projectNumber", "<=", 3)
