@@ -38,13 +38,15 @@ function sendEmailtoDb(e) {
   } else invalidEmailMessage.removeAttribute("hidden");
 }
 
+// suscribe button:
 window.addEventListener("load", () => {
   const suscribeBtn = document.getElementById("suscribe");
   suscribeBtn.addEventListener("click", sendEmailtoDb);
 });
 
+// init Recent Projects section of Homepage:
 window.addEventListener("load", () => {
-  const projectsContainer = document.querySelector(".projects-container");
+  const projectsContainer = document.getElementById("recent-projects");
   const loadingGif = document.getElementById("loading-gif");
 
   // Function that return Project card HTML template:
@@ -68,6 +70,50 @@ window.addEventListener("load", () => {
   try {
     db.collection("projects")
       .where("projectNumber", "<=", 3)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const project = doc.data();
+          loadingGif.remove();
+          projectsContainer.innerHTML += projectCardTemplate(
+            project.img,
+            project.title,
+            project.paragraph,
+            project.projectNumber
+          );
+        });
+      });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// init Other projects section of Project page:
+window.addEventListener("load", () => {
+  const projectsContainer = document.getElementById("other-projects");
+  const loadingGif = document.getElementById("loading-gif");
+
+  // Function that return Project card HTML template:
+  const projectCardTemplate = (img, title, paragraph, id) => {
+    return `<div class="project-card">
+              <img
+                src=${img}
+                alt="Project image"
+              />
+              <div class="project-card-text-container">
+                <h3>${title}</h3>
+                <p class="grey-p">
+                  ${paragraph}
+                </p>
+                <a href="#/${id}" class="blue-link">Learn more</a>
+              </div>`;
+  };
+
+  // TO-DO: revisar el <a> del template!!!!
+
+  try {
+    db.collection("projects")
+      .where("projectNumber", ">", 3)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
