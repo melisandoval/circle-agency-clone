@@ -12,7 +12,7 @@ const loadingGif = document.getElementById("loading-gif");
 // get ref to the specific project of this page on Firebase:
 const docRef = db.collection("projects").doc(urlId);
 
-// generate HTML template of this page Project details:
+// generate HTML template Project post:
 const getProjectHTMLTemplate = (title, subtitle, img, date, paragraphs) => {
   return `
         <h1>${title}</h1>
