@@ -1,8 +1,18 @@
 import { db, initSuscribeButton, getProjectCardTemplate } from "./common.js";
 
-// init suscribe button of CTA section:
-initSuscribeButton();
+// get ID from the URL:
+const urlParams = new URLSearchParams(window.location.search);
+const urlId = urlParams.get("id");
 
+// get HTML elements:
+const projectSection = document.querySelector(".project-section");
+const otherProjectsContainer = document.getElementById("other-projects");
+const loadingGif = document.getElementById("loading-gif");
+
+// get ref to the specific project of this page on Firebase:
+const docRef = db.collection("projects").doc(urlId);
+
+// generate HTML template of this page Project details:
 const getProjectHTMLTemplate = (title, subtitle, img, date, paragraphs) => {
   return `
         <h1>${title}</h1>
@@ -20,12 +30,7 @@ const getProjectHTMLTemplate = (title, subtitle, img, date, paragraphs) => {
     `;
 };
 
-const urlParams = new URLSearchParams(window.location.search);
-const urlId = urlParams.get("id");
-const projectSection = document.querySelector(".project-section");
-
-const docRef = db.collection("projects").doc(urlId);
-
+// get data to generate Project HTML template:
 docRef
   .get()
   .then((doc) => {
@@ -46,29 +51,27 @@ docRef
     console.log("Error getting document:", error);
   });
 
-// init Other projects section of Project page:
-window.addEventListener("load", () => {
-  const projectsContainer = document.getElementById("other-projects");
-  const loadingGif = document.getElementById("loading-gif");
-
-  try {
-    db.collection("projects")
-      .where("category", "==", "")
-      .limit(3)
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach(async (doc) => {
-          const project = await doc.data();
-          loadingGif.remove();
-          projectsContainer.innerHTML += getProjectCardTemplate(
-            project.img,
-            project.title,
-            project.subtitle,
-            doc.id
-          );
-        });
+// get data for the cards of "Other projects" section:
+try {
+  db.collection("projects")
+    .where("id", "!=", urlId)
+    .limit(3)
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const project = doc.data();
+        loadingGif.remove();
+        otherProjectsContainer.innerHTML += getProjectCardTemplate(
+          project.img,
+          project.title,
+          project.subtitle,
+          doc.id
+        );
       });
-  } catch (error) {
-    console.log(error);
-  }
-});
+    });
+} catch (error) {
+  console.log(error);
+}
+
+// init suscribe button of CTA section:
+initSuscribeButton();
