@@ -8,15 +8,14 @@ const getProjectHTMLTemplate = (title, subtitle, img, date, paragraphs) => {
         <h1>${title}</h1>
         <div class="project-subtitle-and-date-container">
           <p class="project-subtitle">${subtitle}</p>
-          <p class="project-completed-on">Completed on <span class="project-date">June 22, 2021</span></p>
+          <p class="project-completed-on">Completed on <span class="project-date">${date}</span></p>
         </div>
         <div class="project-and-shadow-wrap">
           <img id="project-img" src=${img} alt="Project image">
           <img id="shadow-project-img" src=${img} alt="Project image">
         </div>
         <div>
-          <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi. Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt quix duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.</p>
-          <p>Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.Aliqua id fugiat nostrud irure ex duis ea quis id quis ad e dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.Aliqua id fugiat nostrud irure ex duis ea quis id quis ad e dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nis cillum minim tempor enim. </p>
+          ${paragraphs.map((p) => `<p>${p}</p>`).join("")}
         </div>
     `;
 };
@@ -35,7 +34,9 @@ docRef
       projectSection.innerHTML = getProjectHTMLTemplate(
         project.title,
         project.subtitle,
-        project.img
+        project.img,
+        project.date,
+        project.paragraphs
       );
     } else {
       console.log("No documents with that id");
