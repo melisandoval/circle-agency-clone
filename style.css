@@ -450,6 +450,10 @@ footer a:hover {
 @media (min-width: 768px) {
   /* hero section min-width: 768px*/
 
+  .header-contact-page {
+    padding: 0 2em;
+  }
+
   .hero-small-images-container {
     width: 100%;
     display: grid;
