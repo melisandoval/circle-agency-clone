@@ -22,7 +22,8 @@ body {
   background-color: var(--background-grey);
 }
 
-button {
+button,
+.blue-button-link {
   background-color: var(--primary-blue);
   color: var(--white);
   border: none;
