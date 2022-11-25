@@ -4,7 +4,7 @@
   --background-grey: #f2f4fc;
   --primary-blue: #072ac8;
   --font-light-grey: #6b708d;
-  --dark-blue: #292e47;
+  --dark-grey: #292e47;
   --white: #ffffff;
   --yellow: #ffc600;
   --light-blue: #a2d6f9;
@@ -46,7 +46,7 @@ ul {
 h1,
 h2,
 h3 {
-  color: var(--dark-blue);
+  color: var(--dark-grey);
 }
 
 h1 {
@@ -218,7 +218,7 @@ header .blue-button-link {
   background-image: url("./assets/testimonial-orbit-bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-color: var(--dark-blue);
+  background-color: var(--dark-grey);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -401,7 +401,7 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--dark-blue);
+  color: var(--dark-grey);
 }
 
 /* Project page mobile */
@@ -444,6 +444,33 @@ footer a:hover {
   z-index: -1;
   filter: blur(2rem);
   transform: scale(0.9, 0.78);
+}
+
+/* Contact page mobile */
+
+.contact-page-form-section {
+  padding: 2em 1.5em;
+}
+
+.contact-page-form-section form {
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page-form-section label {
+  color: var(--font-light-grey);
+  font-size: 1rem;
+}
+
+.contact-page-form-section form input,
+textarea {
+  border: none;
+  background-color: #e6e9f1;
+  color: var(--font-light-grey);
+  padding: 1em;
+  font-size: 1rem;
+  margin: 0.5em 0 2em;
 }
 
 /* media for tablets */
