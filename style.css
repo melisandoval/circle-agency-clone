@@ -479,6 +479,13 @@ textarea {
   flex-direction: column;
 }
 
+.form-response {
+  background-color: var(--yellow);
+  color: var(--dark-grey);
+  padding: 1em;
+  text-align: center;
+}
+
 /* media for tablets */
 
 @media (min-width: 768px) {

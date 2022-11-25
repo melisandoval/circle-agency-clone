@@ -2,6 +2,7 @@ import { db } from "./common.js";
 
 const submitButton = document.getElementById("submit-form");
 const form = document.getElementById("contact-form");
+const formResponse = document.querySelector(".form-response");
 
 const sendContactToDB = (e) => {
   e.preventDefault();
@@ -16,7 +17,7 @@ const sendContactToDB = (e) => {
   db.collection("contacts")
     .add(contact)
     .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
+      formResponse.removeAttribute("hidden");
     })
     .then(form.reset())
     .catch((error) => {
