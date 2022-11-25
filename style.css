@@ -473,6 +473,12 @@ textarea {
   margin: 0.5em 0 2em;
 }
 
+.form-email-wrap,
+.form-phone-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 /* media for tablets */
 
 @media (min-width: 768px) {
@@ -759,5 +765,13 @@ textarea {
   .project-subtitle-and-date-container {
     display: flex;
     justify-content: space-between;
+  }
+
+  /* Contact page min-width: 992px */
+
+  .form-email-and-phone-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
   }
 }
