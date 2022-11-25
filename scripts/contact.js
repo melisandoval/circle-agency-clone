@@ -1,7 +1,7 @@
 import { db } from "./common.js";
 
-// import { db } from "./common";
 const submitButton = document.getElementById("submit-form");
+const form = document.getElementById("contact-form");
 
 const sendContactToDB = (e) => {
   e.preventDefault();
@@ -18,6 +18,7 @@ const sendContactToDB = (e) => {
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
     })
+    .then(form.reset())
     .catch((error) => {
       console.error("Error adding document: ", error);
     });
