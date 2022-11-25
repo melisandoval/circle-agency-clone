@@ -612,6 +612,12 @@ textarea {
   #shadow-project-img {
     transform: scale(0.98);
   }
+
+  /* Contact page min-width: 768px */
+
+  .contact-page-form-section {
+    padding: 2em 4em 4em;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
