@@ -76,7 +76,7 @@ h2 {
   color: var(--primary-blue);
 }
 
-/* header and navbar mobile */
+/* header mobile */
 
 header {
   display: grid;
@@ -86,6 +86,7 @@ header {
   z-index: 2;
   width: 100%;
   background-color: var(--background-grey);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 header img {
@@ -669,12 +670,14 @@ textarea {
     padding-top: 2em;
   }
 
-  /* header and navbar min-width: 992px */
+  /* header min-width: 992px */
 
   header {
     grid-template-columns: 30% 40% 30%;
     top: 0;
-    padding-top: 1em;
+    /* padding-top: 1em; */
+    position: relative;
+    box-shadow: none;
   }
 
   nav {
