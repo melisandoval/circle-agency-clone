@@ -133,7 +133,7 @@ header .blue-button-link {
 
 #close-symbol {
   color: var(--font-light-grey);
-  padding-top: 4em;
+  padding-top: 10vh;
   padding-right: 1.5em;
   font-size: 2rem;
   align-self: end;
