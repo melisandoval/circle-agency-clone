@@ -82,6 +82,10 @@ header {
   display: grid;
   grid-template-columns: 50% 50%;
   align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: var(--background-grey);
 }
 
 header img {
@@ -112,7 +116,7 @@ header .blue-button-link {
 
 .hero-section {
   max-width: 100%;
-  padding: 2em 1em;
+  padding: 6em 1em 2em;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -491,10 +495,6 @@ textarea {
 @media (min-width: 768px) {
   /* hero section min-width: 768px*/
 
-  .header-contact-page {
-    padding: 0 2em;
-  }
-
   .hero-small-images-container {
     width: 100%;
     display: grid;
@@ -628,6 +628,10 @@ textarea {
 
   /* Contact page min-width: 768px */
 
+  .header-contact-page {
+    padding: 0 2em;
+  }
+
   .contact-page-form-section {
     padding: 2em 4em 4em;
   }
@@ -669,6 +673,8 @@ textarea {
 
   header {
     grid-template-columns: 30% 40% 30%;
+    top: 0;
+    padding-top: 1em;
   }
 
   nav {
