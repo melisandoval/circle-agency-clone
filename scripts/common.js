@@ -11,8 +11,6 @@ const firebaseConfig = {
 // conexion with Firebase databa base:
 export const db = firebase.initializeApp(firebaseConfig).firestore();
 
-// handle burger menu mobile:
-
 // handle suscribe button in CTA Section:
 export function sendEmailtoDb(e) {
   e.preventDefault();
@@ -21,8 +19,6 @@ export function sendEmailtoDb(e) {
   const emailRegex =
     /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
-  // const formDiv = document.getElementById("form-container");
-  // const sectionParagraph = document.getElementById("cta-p");
   const invalidEmailMessage = document.getElementById("invalid-email-message");
   const errorMessage = document.getElementById("error-message");
   const emailReceivedMessage = document.querySelector(".suscribe-response");
@@ -68,4 +64,29 @@ export const getProjectCardTemplate = (img, title, subtitle, id) => {
 export const initSuscribeButton = () => {
   const suscribeBtn = document.getElementById("suscribe");
   suscribeBtn.addEventListener("click", sendEmailtoDb);
+};
+
+// handle burger menu mobile:
+
+export const handleBurgerMobileMenu = () => {
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (
+    mobileMenu.style.visibility === "hidden" ||
+    mobileMenu.style.visibility === ""
+  ) {
+    mobileMenu.style.visibility = "visible";
+  } else {
+    mobileMenu.style.visibility = "hidden";
+  }
+};
+
+export const initBurgerMenu = () => {
+  const burgerSymbol = document.querySelector(".material-symbols-outlined");
+  burgerSymbol.addEventListener("click", handleBurgerMobileMenu);
+
+  const mobileMenuLinks = document.querySelectorAll(".mobile-menu .grey-link");
+  mobileMenuLinks.forEach((link) =>
+    link.addEventListener("click", handleBurgerMobileMenu)
+  );
 };

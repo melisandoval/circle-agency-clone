@@ -1,4 +1,12 @@
-import { db, initSuscribeButton, getProjectCardTemplate } from "./common.js";
+import {
+  db,
+  initSuscribeButton,
+  getProjectCardTemplate,
+  initBurgerMenu,
+} from "./common.js";
+
+// init burger mobile menu:
+initBurgerMenu();
 
 //get DOM elements:
 const projectsContainer = document.getElementById("recent-projects");
