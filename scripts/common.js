@@ -68,17 +68,22 @@ export const initSuscribeButton = () => {
 
 // handle burger menu mobile:
 
-export const handleBurgerMobileMenu = () => {
-  const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenu = document.getElementById("mobile-menu");
 
+export const handleBurgerMobileMenu = () => {
   if (
     mobileMenu.style.visibility === "hidden" ||
     mobileMenu.style.visibility === ""
   ) {
+    window.scrollTo(0, 0);
     mobileMenu.style.visibility = "visible";
   } else {
     mobileMenu.style.visibility = "hidden";
   }
+};
+
+const handleCloseMobileMenu = () => {
+  mobileMenu.style.visibility = "hidden";
 };
 
 export const initBurgerMenu = () => {
@@ -89,4 +94,7 @@ export const initBurgerMenu = () => {
   mobileMenuLinks.forEach((link) =>
     link.addEventListener("click", handleBurgerMobileMenu)
   );
+
+  const closeSymbol = document.getElementById("close-symbol");
+  closeSymbol.addEventListener("click", handleCloseMobileMenu);
 };

@@ -19,7 +19,7 @@ const sendContactToDB = (e) => {
 
   db.collection("contacts")
     .add(contact)
-    .then((docRef) => {
+    .then(() => {
       formResponse.removeAttribute("hidden");
     })
     .then(form.reset())
