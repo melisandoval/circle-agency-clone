@@ -1,4 +1,7 @@
-import { db } from "./common.js";
+import { db, initBurgerMenu } from "./common.js";
+
+// init burger mobile menu:
+initBurgerMenu();
 
 const submitButton = document.getElementById("submit-form");
 const form = document.getElementById("contact-form");
