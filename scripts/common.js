@@ -19,10 +19,12 @@ export function sendEmailtoDb(e) {
   const emailRegex =
     /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
-  const formDiv = document.getElementById("form-container");
-  const sectionParagraph = document.getElementById("cta-p");
+  // const formDiv = document.getElementById("form-container");
+  // const sectionParagraph = document.getElementById("cta-p");
   const invalidEmailMessage = document.getElementById("invalid-email-message");
   const errorMessage = document.getElementById("error-message");
+  const emailReceivedMessage = document.querySelector(".suscribe-response");
+  const form = document.querySelector(".CTA-section form");
 
   if (emailRegex.test(email)) {
     db.collection("emails")
@@ -30,9 +32,10 @@ export function sendEmailtoDb(e) {
         email: email,
       })
       .then(() => {
-        sectionParagraph.innerHTML = "";
-        formDiv.innerHTML =
-          "<p class='suscribe-response'>Your email has been received 🎉<br> We will contact you very soon!</p>";
+        emailReceivedMessage.removeAttribute("hidden");
+        invalidEmailMessage.hidden = true;
+        errorMessage.hidden = true;
+        form.reset();
       })
       .catch((error) => {
         console.error("Error adding document: ", error);
