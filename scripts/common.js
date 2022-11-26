@@ -11,6 +11,8 @@ const firebaseConfig = {
 // conexion with Firebase databa base:
 export const db = firebase.initializeApp(firebaseConfig).firestore();
 
+// handle burger menu mobile:
+
 // handle suscribe button in CTA Section:
 export function sendEmailtoDb(e) {
   e.preventDefault();

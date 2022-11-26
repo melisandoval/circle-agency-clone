@@ -76,6 +76,10 @@ h2 {
   color: var(--primary-blue);
 }
 
+.page-container {
+  position: relative;
+}
+
 /* header mobile */
 
 header {
@@ -112,6 +116,34 @@ header .blue-button-link {
 .burger-menu-container {
   justify-self: end;
   padding: 1em 2em;
+}
+
+.mobile-menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-grey);
+  visibility: hidden;
+}
+
+.mobile-menu ul {
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-menu li {
+  padding: 1em;
+}
+
+.mobile-menu a {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /* hero section mobile */
