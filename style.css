@@ -86,7 +86,8 @@ header {
   z-index: 2;
   width: 100%;
   background-color: var(--background-grey);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
 header img {
@@ -454,7 +455,7 @@ footer a:hover {
 /* Contact page mobile */
 
 .contact-page-form-section {
-  padding: 2em 1.5em;
+  padding: 6em 1.5em;
 }
 
 .contact-page-form-section form {
@@ -630,11 +631,13 @@ textarea {
   /* Contact page min-width: 768px */
 
   .header-contact-page {
-    padding: 0 2em;
+    max-width: 100%;
+    /* padding-left: 2em;
+    padding-right: 2em; */
   }
 
   .contact-page-form-section {
-    padding: 2em 4em 4em;
+    padding: 6em 4em 4em;
   }
 }
 
@@ -784,6 +787,10 @@ textarea {
   }
 
   /* Contact page min-width: 992px */
+
+  .contact-page-form-section {
+    padding-top: 4em;
+  }
 
   .form-email-and-phone-container {
     display: grid;
