@@ -48,7 +48,7 @@ docRef
         project.title,
         project.subtitle,
         project.img,
-        project.date,
+        transformDate(project.date),
         project.paragraphs
       );
     } else {
@@ -58,6 +58,16 @@ docRef
   .catch((error) => {
     console.log("Error getting document:", error);
   });
+
+// receives a timestamp and returns the string for the date in the project page:
+function transformDate(timestamp) {
+  const date = timestamp.toDate();
+  const month = date.toLocaleString("en-US", { month: "long" });
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  return `${month} ${day}, ${year}`;
+}
 
 // get data for the cards of "Other projects" section:
 try {
