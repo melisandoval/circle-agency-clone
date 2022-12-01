@@ -261,7 +261,8 @@ header .blue-button-link {
 /* testimonial section mobile*/
 
 .testimonial-section {
-  margin: 2em 0;
+  margin: 4em 0 2em;
+  padding: 2em 0;
   max-width: 100%;
   background-image: url("./assets/testimonial-orbit-bg.png");
   background-repeat: no-repeat;
@@ -271,6 +272,7 @@ header .blue-button-link {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
 }
 
@@ -278,7 +280,7 @@ header .blue-button-link {
   color: var(--white);
   margin-block-start: 0em;
   margin-block-end: 0em;
-  padding: 1.5em 0.5em 0;
+  padding: 1.5em 0.5em 0.5em;
 }
 
 .testimonial-p {
@@ -291,7 +293,7 @@ header .blue-button-link {
   max-width: 240px;
   display: flex;
   align-items: center;
-  padding-bottom: 3em;
+  padding-bottom: 2em;
 }
 
 .testimonial-client-card img {
@@ -838,5 +840,11 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-section {
+    height: 622px;
   }
 }
